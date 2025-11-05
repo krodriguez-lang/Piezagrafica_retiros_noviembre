@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo de Retiros - Noviembre</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 35px;
+            padding: 50px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 0.8s ease-out;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #764ba2;
+            font-weight: 600;
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 25px;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .step {
+            position: relative;
+            animation: slideIn 0.6s ease-out backwards;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.2s; }
+        .step:nth-child(2) { animation-delay: 0.4s; }
+        .step:nth-child(3) { animation-delay: 0.6s; }
+        .step:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+
+        .step-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .step-title {
+            font-size: 1.4em;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .icon {
+            font-size: 1.5em;
+        }
+
+        .step-description {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1.05em;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            color: #764ba2;
+        }
+
+        .alert-box {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(238, 90, 111, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+                padding: 8px 20px;
+            }
+
+            .step-title {
+                font-size: 1.2em;
+            }
+
+            .step-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Retiro Syscolegios - Noviembre 2025</h1>
+            <div class="subtitle">🎯 Protocolo Especial del Mes</div>
+        </header>
+
+        <div class="timeline">
+            <div class="step">
+                <div class="step-content">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        <span>✍️ Formato Manuscrito</span>
+                    </div>
+                    <div class="step-description">
+                        Solo por el mes de noviembre, diligencie y firme el formato de retiro de manera manuscrita cuando el acudiente lo solicite.
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-content">
+                    <div class="step-title">
+                        <span class="step-number">2</span>
+                        <span>⏸️ Esperar Fin de Mes</span>
+                    </div>
+                    <div class="step-description">
+                        NO procese el retiro en la plataforma Syscolegios inmediatamente. Aguarde hasta finalizar el mes para garantizar que docentes completen el registro de notas pendientes y coordinación ejecute la promoción estudiantil.
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-content">
+                    <div class="step-title">
+                        <span class="step-number">3</span>
+                        <span>📧 Notificar a Coordinación</span>
+                    </div>
+                    <div class="step-description">
+                        Comunique vía correo electrónico a coordinación cada caso. Ellos notificarán a docentes para considerar estos estudiantes durante el ingreso de notas, previniendo registros indebidos.
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-content">
+                    <div class="step-title">
+                        <span class="step-number">4</span>
+                        <span>✅ Confirmación y Retiro Final</span>
+                    </div>
+                    <div class="step-description">
+                        Al cierre del mes, Secretaría Académica debe solicitar confirmación por correo a coordinación de que todas las notas están digitadas y la promoción realizada. Solo entonces proceder al retiro en la plataforma Syscolegios, verificando que la fecha registrada coincida con la del formato físico.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert-box">
+            ⚠️ IMPORTANTE: Este protocolo garantiza la integridad académica de los registros y evita inconsistencias en las notas finales
+        </div>
+    </div>
+</body>
+</html>
